@@ -10,7 +10,7 @@ class Db_con
 private:
     QSqlDatabase db;
 
-    Secret x; // This class contain my privet data to database and it should be remove or data in tajne.h shut be replaced
+    Secret x; // This class contains my privet data to database connect and it should be remove or data in tajne.h shut be replaced
 
     QString conn_name = x.conn_name;      // Conection name
     QString db_type = x.db_type;            // DataBase Type

@@ -1,15 +1,11 @@
 SOURCES += \
-    main.cpp \
     db_con.cpp \
-    addcontakt.cpp \
-    dodajtab.cpp \
-    win.cpp
+    main.cpp \
+    tabdialog.cpp
 
 HEADERS += \
     db_con.h \
-    addcontakt.h \
-    dodajtab.h \
-    win.h
+    tabdialog.h
 
 
 QT += core gui widgets sql
