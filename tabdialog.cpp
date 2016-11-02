@@ -1,6 +1,12 @@
 #include <QVBoxLayout>
 #include <QTabWidget>
 #include <QString>
+#include <QLabel>
+#include <QLineEdit>
+#include <QFormLayout>
+#include <QButtonGroup>
+#include <QPushButton>
+#include <QGroupBox>
 #include "tabdialog.h"
 
 QT_BEGIN_NAMESPACE
@@ -20,20 +26,53 @@ TabDialog::TabDialog(QWidget *parent)
     leyout->addWidget(tabWidget);
 
     setLayout(leyout);
+    setWindowTitle("Kontakty");
+
+}
+
+void Dodaj::createButtons()
+{
+    hGroupBox = new QGroupBox;
+
+    QHBoxLayout *buttons = new QHBoxLayout;
+
+    QPushButton *dodaj = new QPushButton("Dodaj");
+    QPushButton *wyczysc = new QPushButton("Wyczyść");
+
+    buttons->addWidget(dodaj);
+    buttons->addWidget(wyczysc);
+
+    hGroupBox->setLayout(buttons);
 
 }
 
 Dodaj::Dodaj(QWidget *parent)
     :QWidget(parent)
 {
-    /*
-    QLabel *imie_label = new QLabel("Imię:");
+
+    QLabel *imieLab = new QLabel("Imię:");
     QLineEdit *imie = new QLineEdit();
-    QLabel *nazwisko_label = new QLabel("Nazwisko:");
+    QLabel *nazwiskoLab = new QLabel("Nazwisko:");
     QLineEdit *nazwisko = new QLineEdit();
-    QLabel *numer_label = new QLabel("Nr telefonu:");
+    QLabel *numerLab = new QLabel("Nr telefonu:");
     QLineEdit *numer = new QLineEdit();
-    */
+
+    // QButtonGroup *buttons = new QButtonGroup;
+
+    Dodaj::createButtons();
+
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(imieLab);
+    layout->addWidget(imie);
+    layout->addWidget(nazwiskoLab);
+    layout->addWidget(nazwisko);
+    layout->addWidget(numerLab);
+    layout->addWidget(numer);
+
+    layout->addWidget(hGroupBox);
+
+    setLayout(layout);
+
 
 }
 

@@ -7,6 +7,7 @@
 QT_BEGIN_NAMESPACE
 class QTabWidget;
 class QWidget;
+class QGroupBox;
 
 QT_END_NAMESPACE
 
@@ -24,7 +25,14 @@ class Dodaj : public QWidget
 
 public:
     explicit Dodaj(QWidget *parent = 0);
+
+private:
+    QGroupBox *hGroupBox;
+
+    void createButtons();
 };
+
+
 
 class TabDialog : public QDialog
 {
@@ -35,6 +43,7 @@ public:
 
 private:
     QTabWidget *tabWidget;
+
 };
 
 #endif // TABDIALOG_H
