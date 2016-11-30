@@ -2,11 +2,29 @@
 #define WINDOWLIST_H
 
 #include <QObject>
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QLineEdit>
 
-class WindowList
+#include "dboperations.h"
+
+class WindowList : public QWidget
 {
+
+    Q_OBJECT
+
 public:
-    WindowList();
+    explicit WindowList(DbOperations *dboper);
+    ~WindowList();
+
+private:
+
+    QVBoxLayout *layout;
+    QString *text;
+    QLineEdit *row;
+
+    DbOperations* dboperator;
+
 };
 
 #endif // WINDOWLIST_H
